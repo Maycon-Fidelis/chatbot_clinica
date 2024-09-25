@@ -5,10 +5,11 @@ const trainingData = require('./conversation-data.json');
 
 const net = new brain.NeuralNetwork();
 
-const formattedData = trainingData.map(item =>({
-    input: item.input.toLowerCase(),
-    output: item.output.toLocaleLowerCase()
+const formattedData = trainingData.map(item => ({
+    input: { [item.input.toLowerCase()]: 1 },
+    output: { [item.output.toLowerCase()]: 1 }
 }));
+
 
 net.train(formattedData,{
     interations: 200000,
