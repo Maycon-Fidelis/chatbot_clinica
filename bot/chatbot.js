@@ -5,27 +5,27 @@ const model = JSON.parse(fs.readFileSync('./neuralnet.json'));
 const net = new brain.NeuralNetwork();
 net.fromJSON(model);
 
-const trainingData = require('../training/conversation-data.json');
+const trainingData = require('../training/trainedModel.json');
 
 const formatInput = (input) => {
-    return trainingData.map(item => ({
-        input: { [item.input.toLowerCase()]: 1},
-        output: { [item.output.toLocaleLowerCase]: 1 }
-    }));
+    const formattedInput = {};
+    input.toLowerCase().split(' ').forEach(word => {
+        formattedInput[word] = 1;
+    });
+    return formattedInput;
 };
 
-const getResponse = (userInput) => {
-    const formattedData = formatInput(userInput);
+const getResponse = (input) => {
+    const formattedInput = formatInput(input);
+    const output = net.run(formattedInput);
     
-    const output = net.run({ [userInput.toLowerCase()]: 1 });
-    
-    const responseIndex = Object.keys(output).reduce((a, b) => output[a] > output[b] ? a : b);
-    
-    return trainingData.find(item => item.output.toLowerCase() === responseIndex).output;
+    const sortedResponses = Object.entries(output).sort(([, a], [, b]) => b - a);
+    return sortedResponses[0]; // [resposta, probabilidade]
 };
 
-const userInput = "quais exames vocês fazem ?";
-const response = getResponse(userInput);
+const userInput = "Como posso agendar uma consulta?";
+const [bestResponse, probability] = getResponse(userInput);
 
 console.log("Usuario: ", userInput);
-console.log("Bot", response);
+console.log("Bot: ", bestResponse);
+console.log("Probabilidade: ", probability);
