@@ -1,7 +1,16 @@
 const express = require('express');
 const app = express();
 const port = 3001;
+const cors = require('cors');
 const { getChatbotResponse } = require('./bot/chatbot');
+
+const corsOptions = {
+    origin: '*',
+    methods: 'GET',
+    allowedHeaders: 'Content-Type',
+};
+
+app.use(cors(corsOptions));
 
 app.get('/:pergunta', (req, res) => {
     const userInput = req.params.pergunta;
@@ -15,4 +24,4 @@ app.get('/:pergunta', (req, res) => {
 
 app.listen(port, () => {
     console.log("Server is listening on port", port);
-});  
+});
