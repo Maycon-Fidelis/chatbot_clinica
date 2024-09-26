@@ -1,7 +1,7 @@
 const brain = require('brain.js');
 const fs = require('fs');
 
-const model = JSON.parse(fs.readFileSync('../training/data/neuralnet.json'));
+const model = JSON.parse(fs.readFileSync('training/data/neuralnet.json'));
 const net = new brain.NeuralNetwork();
 net.fromJSON(model);
 
@@ -21,9 +21,8 @@ const getResponse = (input) => {
     return sortedResponses[0];
 };
 
-const userInput = "Qual o horário de atendimento ?";
-const [bestResponse, probability] = getResponse(userInput);
+const getChatbotResponse = (userInput) => {
+    return getResponse(userInput);
+};
 
-console.log("Usuario: ", userInput);
-console.log("Bot: ", bestResponse);
-console.log("Probabilidade: ", probability);
+module.exports = { getChatbotResponse };

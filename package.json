@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "brain.js": "^1.4.10"
+    "brain.js": "^1.4.10",
+    "express": "^4.21.0"
   }
 }
