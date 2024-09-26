@@ -23,7 +23,7 @@ net.train(formattedData, {
 });
 
 const model = net.toJSON();
-fs.writeFileSync('./data/neuralnet.json', JSON.stringify(model));
-fs.writeFileSync('./data/vocabulary.json', JSON.stringify(vocabulary));
+fs.writeFileSync('./data/neuralnet2.json', JSON.stringify(model));
+fs.writeFileSync('./data/vocabulary2.json', JSON.stringify(vocabulary));
 
 console.log("Rede neural treinada e salva!");
