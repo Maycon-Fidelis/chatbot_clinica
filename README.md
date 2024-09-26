@@ -22,6 +22,12 @@ O principal objetivo desse projeto é usar os conceitos aprendidos na matéria d
 ## Demonstração
 ![image](https://github.com/user-attachments/assets/1629eadd-c083-4906-a52a-cafcff5b1ac1)
 
+
+## Como Executar o Projeto Localmente
+
+### Requisitos
+Certifique-se de ter o Node.js instalado.
+
 ### Passos
 1. Clone o repositório:
     ```bash
@@ -31,3 +37,9 @@ O principal objetivo desse projeto é usar os conceitos aprendidos na matéria d
     ```bash
     cd chatbot_clinica
     ```
+3. Instale as dependências e inicie-o:
+    ```bash
+    npm install
+    npm start
+    ```
+4. Abra em seu navegador o arquivo index.html e já estará executando!
