@@ -1,28 +1,29 @@
-const fs = require('fs');
 const brain = require('brain.js');
+const fs = require('fs');
 
-// Carrega os dados de treinamento do arquivo JSON
 const trainingData = require('./conversation-data.json');
 const net = new brain.NeuralNetwork();
 
-// Formata os dados para treinamento
-const formattedData = trainingData.nlu.flatMap(item => 
-    item.examples.map(example => ({
-        input: { [example]: 1 }, // Representação do input
-        output: { [item.intent]: 1 } // Representação do output
-    }))
-);
+const vocabulary = Array.from(new Set(
+    trainingData.flatMap(item => item.input.toLowerCase().split(' '))
+));
 
-// Treina a rede neural
+const formattedData = trainingData.map(item => ({
+    input: vocabulary.reduce((acc, word) => {
+        acc[word] = item.input.toLowerCase().includes(word) ? 1 : 0;
+        return acc;
+    }, {}),
+    output: { [item.output.toLowerCase()]: 1 }
+}));
+
 net.train(formattedData, {
+    iterations: 200000,
     log: true,
-    logPeriod: 100,
-    iterations: 20000,
-    errorThresh: 0.005,
+    logPeriod: 100
 });
 
-// Salva o modelo treinado
-const trainedModel = net.toJSON();
-fs.writeFileSync('trainedModel.json', JSON.stringify(trainedModel));
+const model = net.toJSON();
+fs.writeFileSync('./data/neuralnet.json', JSON.stringify(model));
+fs.writeFileSync('./data/vocabulary.json', JSON.stringify(vocabulary));
 
-console.log("Modelo treinado e salvo com sucesso!");
+console.log("Rede neural treinada e salva!");

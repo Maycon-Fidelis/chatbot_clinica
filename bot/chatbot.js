@@ -1,11 +1,9 @@
 const brain = require('brain.js');
 const fs = require('fs');
 
-const model = JSON.parse(fs.readFileSync('./neuralnet.json'));
+const model = JSON.parse(fs.readFileSync('../training/data/neuralnet.json'));
 const net = new brain.NeuralNetwork();
 net.fromJSON(model);
-
-const trainingData = require('../training/trainedModel.json');
 
 const formatInput = (input) => {
     const formattedInput = {};
@@ -20,10 +18,10 @@ const getResponse = (input) => {
     const output = net.run(formattedInput);
     
     const sortedResponses = Object.entries(output).sort(([, a], [, b]) => b - a);
-    return sortedResponses[0]; // [resposta, probabilidade]
+    return sortedResponses[0];
 };
 
-const userInput = "Como posso agendar uma consulta?";
+const userInput = "Qual o horário de atendimento ?";
 const [bestResponse, probability] = getResponse(userInput);
 
 console.log("Usuario: ", userInput);

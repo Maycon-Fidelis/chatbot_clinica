@@ -1,159 +1,30 @@
-{
-    "nlu": [
-      {
-        "intent": "consultar_medicos",
-        "examples": [
-          "Quais são os médicos disponíveis?",
-          "Quais são os médicos especialistas?",
-          "Quem são os médicos que trabalham aqui?",
-          "Tem algum especialista disponível?",
-          "Quero saber os nomes dos médicos.",
-          "Quem são os oftalmologistas da clínica?",
-          "Quais médicos atendem nesta clínica?",
-          "Quais especialistas vocês têm?",
-          "Pode me dizer os nomes dos médicos disponíveis?",
-          "Quero saber se o Dr. João está disponível."
-        ]
-      },
-      {
-        "intent": "localizar_clinica",
-        "examples": [
-          "Onde fica a clínica?",
-          "Qual é o endereço da clínica?",
-          "A clínica fica em qual rua?",
-          "Pode me informar onde está a clínica?",
-          "Vocês têm um mapa da localização?",
-          "Qual o bairro da clínica?",
-          "A clínica é perto do shopping?",
-          "Pode me dar a localização exata da clínica?",
-          "Qual é o telefone da clínica?",
-          "A clínica é fácil de encontrar?"
-        ]
-      },
-      {
-        "intent": "agendar_consulta",
-        "examples": [
-          "Posso marcar uma consulta com o Dr. João?",
-          "Eu gostaria de um exame de visão com a Dra. Maria, pode ser?",
-          "Como posso agendar uma consulta?",
-          "Quero marcar um horário com o Dr. Pedro.",
-          "Tem como agendar uma consulta para amanhã?",
-          "Quero marcar uma consulta para esta semana.",
-          "Posso agendar um exame agora?",
-          "Qual é o processo para agendar uma consulta?",
-          "Vocês têm horários disponíveis para consultas?",
-          "Quais são as opções de agendamento?"
-        ]
-      },
-      {
-        "intent": "horario_funcionamento",
-        "examples": [
-          "Qual é o horário de funcionamento?",
-          "A clínica abre que horas?",
-          "Vocês atendem durante a tarde?",
-          "Qual é o horário de atendimento?",
-          "Em que horários posso visitar a clínica?",
-          "A clínica funciona aos sábados?",
-          "Qual é o horário de funcionamento no fim de semana?",
-          "A clínica fecha para o almoço?",
-          "Vocês têm horários especiais em feriados?",
-          "Qual é o melhor horário para vir?"
-        ]
-      },
-      {
-        "intent": "exames_disponiveis",
-        "examples": [
-          "Quais exames vocês fazem?",
-          "Vocês realizam exames de vista?",
-          "Que tipo de exames estão disponíveis?",
-          "Eu posso fazer um exame de pressão ocular?",
-          "Quais são os exames de rotina que vocês oferecem?",
-          "Fazem exame de fundo de olho?",
-          "Que exames são oferecidos pela clínica?",
-          "Vocês têm exames para diabéticos?",
-          "Realizam exames de refração?",
-          "Quais são os tipos de exames oftalmológicos disponíveis?"
-        ]
-      },
-      {
-        "intent": "agendar_exame",
-        "examples": [
-          "Posso marcar um exame de refração?",
-          "Quero agendar um exame de acuidade visual.",
-          "Vocês podem agendar um exame para mim?",
-          "Preciso de um exame de fundo de olho, como faço?",
-          "Qual é o procedimento para agendar um exame?",
-          "Tem horários para exame de pressão ocular?",
-          "Posso marcar todos os exames em um dia?",
-          "Quais são os horários disponíveis para agendar exames?",
-          "Posso agendar um exame a qualquer momento?",
-          "Vocês fazem exames de rotina, como agendar?"
-        ]
-      },
-      {
-        "intent": "atendimento_urgente",
-        "examples": [
-          "Vocês atendem urgências?",
-          "Posso ser atendido em caso de emergência?",
-          "Qual é o procedimento para atendimento urgente?",
-          "Vocês têm horário para emergências?",
-          "O que eu faço se precisar de atendimento imediato?",
-          "Vocês oferecem consultas de emergência?",
-          "Como funciona o atendimento para casos urgentes?",
-          "Qual é o tempo de espera para uma emergência?",
-          "Atendem pacientes em situações críticas?",
-          "Qual é o número para emergências médicas?"
-        ]
-      },
-      {
-        "intent": "cancelar_consulta",
-        "examples": [
-          "Como posso cancelar minha consulta?",
-          "Preciso cancelar meu agendamento, o que faço?",
-          "Qual é o procedimento para cancelar uma consulta?",
-          "Posso cancelar a consulta pelo telefone?",
-          "Como funcionam os cancelamentos aqui?",
-          "Quais informações são necessárias para cancelar?",
-          "Consigo cancelar a consulta pelo site?",
-          "O que fazer se não puder comparecer à consulta?",
-          "É possível remarcar a consulta em vez de cancelar?",
-          "Qual o prazo para cancelamento sem cobrança de taxa?"
-        ]
-      }
-    ],
-    "responses": [
-      {
-        "intent": "consultar_medicos",
-        "response": "Temos três especialistas: Dr. João Silva, Dra. Maria Costa e Dr. Pedro Santos."
-      },
-      {
-        "intent": "localizar_clinica",
-        "response": "A clínica oftalmológica está localizada na Rua das Palmeiras, 456."
-      },
-      {
-        "intent": "agendar_consulta",
-        "response": "Claro! Dr. João está disponível de segunda a sexta, das 7h às 13h. Para qual exame você gostaria de agendar?"
-      },
-      {
-        "intent": "horario_funcionamento",
-        "response": "Funcionamos de segunda a sexta, das 7h às 13h."
-      },
-      {
-        "intent": "exames_disponiveis",
-        "response": "Realizamos exames de acuidade visual, pressão intraocular e refração."
-      },
-      {
-        "intent": "agendar_exame",
-        "response": "Sim, podemos agendar seu exame de refração. Para qual horário você gostaria de marcar?"
-      },
-      {
-        "intent": "atendimento_urgente",
-        "response": "Atendemos apenas consultas agendadas e exames de rotina. Para emergências, recomendamos procurar um pronto-socorro."
-      },
-      {
-        "intent": "cancelar_consulta",
-        "response": "Para cancelar sua consulta, por favor entre em contato conosco pelo telefone ou visite nosso site para mais informações."
-      }
-    ]
-  }
-  
+[
+  { "input": "Quais são os médicos disponíveis?", "output": "Temos três especialistas: Dr. João Silva, Dra. Maria Costa e Dr. Pedro Santos." },
+  { "input": "Onde fica a clínica?", "output": "A clínica oftalmológica está localizada na Rua das Palmeiras, 456." },
+  { "input": "Posso marcar uma consulta com o Dr. João?", "output": "Claro! Dr. João está disponível de segunda a sexta, das 7h às 13h. Para qual exame você gostaria de agendar?" },
+  { "input": "Quais exames vocês fazem?", "output": "Realizamos exames de acuidade visual, pressão intraocular e refração." },
+  { "input": "Qual é o horário de funcionamento?", "output": "Funcionamos de segunda a sexta, das 7h às 13h." },
+  { "input": "Posso marcar uma consulta fora do horário de funcionamento?", "output": "Infelizmente, só realizamos consultas de segunda a sexta, das 7h às 13h." },
+  { "input": "Qual o horário da Dra. Maria?", "output": "Dra. Maria atende de segunda a sexta, das 7h às 13h." },
+  { "input": "Vocês atendem no sábado?", "output": "Não, só funcionamos de segunda a sexta, das 7h às 13h." },
+  { "input": "Vocês fazem exames de vista?", "output": "Sim, realizamos exames de acuidade visual, pressão intraocular e refração." },
+  { "input": "Posso marcar uma consulta às 14h?", "output": "Desculpe, nosso horário de atendimento é apenas pela manhã, das 7h às 13h." },
+  { "input": "Posso fazer um exame de refração?", "output": "Sim, podemos agendar um exame de refração. Para qual horário você gostaria de marcar?" },
+  { "input": "Quando o Dr. Pedro está disponível?", "output": "Dr. Pedro atende de segunda a sexta, das 7h às 13h." },
+  { "input": "Vocês atendem urgências?", "output": "Atendemos apenas consultas agendadas e exames de rotina, como acuidade visual e refração." },
+  { "input": "Como faço para marcar um exame de pressão ocular?", "output": "Podemos agendar seu exame de pressão ocular. Qual o melhor dia e horário para você, dentro do nosso funcionamento das 7h às 13h?" },
+  { "input": "A clínica funciona à tarde?", "output": "Não, só estamos abertos de segunda a sexta pela manhã, das 7h às 13h." },
+  { "input": "Posso marcar uma consulta com a Dra. Maria Costa?", "output": "Claro! Dra. Maria atende das 7h às 13h. Qual exame você gostaria de realizar?" },
+  { "input": "Vocês fazem exame de fundo de olho?", "output": "Sim, realizamos exames de fundo de olho dentro do nosso horário de funcionamento, das 7h às 13h." },
+  { "input": "Quais são os horários disponíveis para o Dr. Pedro?", "output": "O Dr. Pedro tem horários disponíveis de segunda a sexta, das 7h às 13h." },
+  { "input": "Eu preciso de um exame de acuidade visual. Posso agendar?", "output": "Claro! Podemos agendar seu exame de acuidade visual dentro do horário de funcionamento, das 7h às 13h." },
+  { "input": "Eu quero fazer um exame de refração na terça-feira, pode ser?", "output": "Sim, podemos agendar seu exame de refração na terça-feira, dentro do nosso horário de 7h às 13h." },
+  { "input": "Quais exames posso fazer com o Dr. João?", "output": "O Dr. João realiza exames de acuidade visual, pressão intraocular e refração." },
+  { "input": "A clínica abre aos domingos?", "output": "Não, a clínica funciona apenas de segunda a sexta, das 7h às 13h." },
+  { "input": "Eu posso fazer dois exames no mesmo dia?", "output": "Sim, podemos agendar múltiplos exames no mesmo dia, dentro do nosso horário de funcionamento, das 7h às 13h." },
+  { "input": "Tem como agendar para amanhã às 10h?", "output": "Sim, temos horários disponíveis amanhã entre 7h e 13h. Vamos agendar às 10h?" },
+  { "input": "Quais são os médicos especialistas?", "output": "Temos três especialistas: Dr. João Silva, Dra. Maria Costa e Dr. Pedro Santos." },
+  { "input": "Eu gostaria de um exame de visão com a Dra. Maria, pode ser?", "output": "Claro! Dra. Maria está disponível das 7h às 13h. Podemos agendar?" },
+  { "input": "Vocês fazem exames de rotina?", "output": "Sim, realizamos exames de acuidade visual, pressão intraocular e refração." },
+  { "input": "Preciso de um exame de visão, posso marcar agora?", "output": "Sim, podemos agendar o exame de acuidade visual. Para qual horário você gostaria de marcar, dentro das 7h às 13h?" }
+]
