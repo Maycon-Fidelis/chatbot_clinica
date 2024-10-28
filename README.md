@@ -43,4 +43,8 @@ Certifique-se de ter o Node.js instalado.
     npm install
     npm start
     ```
+<<<<<<< HEAD
 4. Abra em seu navegador o arquivo index.html e já estará executando!
+=======
+4. Abra em seu navegador o arquivo index.html e já estará executando!
+>>>>>>> 72cb57b2a7abf939ab0f9476aa9f98fc4dcd534c
